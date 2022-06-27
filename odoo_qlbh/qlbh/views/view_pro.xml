@@ -1,0 +1,49 @@
+<odoo>
+	<record id="pro_tree" model="ir.ui.view">
+		<field name="name">mol_pro.tree</field>
+		<field name="model">mol_pro</field>
+		<field name="arch" type="xml">
+			<tree string="pro">
+				<field name="p_code"/>
+				<field name="p_name"/>
+				<field name="price"/>
+				<field name="currency" />
+				<field name="desscription"/>
+				<field name="quantity"/>
+				<field name="quantity_purchased"/>
+				<button name="quantity_purchased_1" string="+" type="object"
+				class='oe_highlight' />
+				<button name="quantity_purchased_2" string="-" type="object"
+				class='oe_highlight' />
+			</tree>
+		</field>
+	</record>
+    <record id="pro_form" model="ir.ui.view">
+		<field name="name">mol_pro.form</field>
+		<field name="model">mol_pro</field>
+		<field name="arch" type="xml">
+			<form string="pro">
+				<sheet>
+					<group>
+						<field name="p_code"/>
+						<field name="p_name"/>
+						<field name="price"/>
+						<field name="currency"/>
+						<field name="desscription"/>
+						<field name="quantity"/>
+					</group>
+					<group>
+						<field name="image" widget="image"></field>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+	<record id="pro_action" model="ir.actions.act_window">
+		<field name="name">Product</field>
+		<field name="res_model">mol_pro</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+  	<menuitem id="pro_menu" name="Product" groups="base.group_user" sequence="1"/>
+	<menuitem id="pro_menu_1" name="Product" parent="pro_menu" action="pro_action" groups="base.group_user"/>
+</odoo>

@@ -1,0 +1,32 @@
+<odoo>
+	<record id="orderitem_tree" model="ir.ui.view">
+		<field name="name">mol_orderitem.tree</field>
+		<field name="model">mol_orderitem</field>
+		<field name="arch" type="xml">
+			<tree string="orderitem">
+				<field name="o_code"/>
+				<field name="name_pro"/>
+			</tree>
+		</field>
+	</record>
+    <record id="orderitem_form" model="ir.ui.view">
+		<field name="name">mol_orderitem.form</field>
+		<field name="model">mol_orderitem</field>
+		<field name="arch" type="xml">
+			<form string="orderitem">
+				<sheet>
+					<group>
+						<field name="o_code"/>
+						<field name="name_pro"/>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+	<record id="orderitem_action" model="ir.actions.act_window">
+		<field name="name">Orderitem</field>
+		<field name="res_model">mol_orderitem</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+	<menuitem id="orderitem_menu" name="Orderitem" parent="pro_menu" action="orderitem_action" groups="base.group_user"/>
+</odoo>
